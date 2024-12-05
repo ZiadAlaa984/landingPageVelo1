@@ -1,15 +1,15 @@
 "use client";
-import curRight from "../../app/img/icons/curRight.png";
-import curLeft from "../../app/img/icons/curLeft.png";
 
 import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
+import Image from "next/image";
+import curRight from "../../app/img/icons/curRight.png";
+import curLeft from "../../app/img/icons/curLeft.png";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -187,7 +187,7 @@ const CarouselItem = React.forwardRef<
       aria-roledescription="slide"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "" : "pt-4",
+        orientation === "horizontal" ? "pl-4" : "pt-4",
         className
       )}
       {...props}
@@ -208,10 +208,8 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-[40px] w-[40px] border-[#BCBCBC] rounded-full",
-        orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+        " p-[10px] lg:h-[40px] w-[32px] h-[32px] lg:w-[40px] border-[#434343] rounded-full",
+        orientation === "horizontal" ? "" : "  rotate-90",
         className
       )}
       disabled={!canScrollPrev}
@@ -241,10 +239,8 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-[40px] w-[40px] border-[#BCBCBC] rounded-full",
-        orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+        "  p-[10px] lg:h-[40px] w-[32px] h-[32px] lg:w-[40px] border-[#434343] rounded-full",
+        orientation === "horizontal" ? "" : "  rotate-90",
         className
       )}
       disabled={!canScrollNext}

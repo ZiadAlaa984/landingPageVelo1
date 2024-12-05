@@ -103,7 +103,7 @@ export default function Footer() {
           initial={{ x: "-100%", opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 1, ease: "easeIn" }}
-          className="lg:col-span-1 w-full lg:order-1 flex items-end  col-span-2    flex-col gap-6"
+          className="lg:col-span-1 w-full order-2 lg:order-1 flex items-end  col-span-2    flex-col gap-6"
         >
           <h4 className="font-semibold  text-[18px]">كن تاجر معانا</h4>
           <div>

@@ -17,7 +17,7 @@ export default function Offer() {
   return (
     <section className="flex flex-col  min-h-screen  overflow-hidden  mx-auto gap-10 lg:gap-20">
       <SpecialTitle
-        rate={"110"}
+        index={2}
         title=" ..عروض من أجلك "
         par="استمتع بتخفيضات حصرية ومميزة تم اختيارها بعناية لتناسب احتياجاتك. نوفر لك أفضل العروض على منتجاتك المفضلة بأسعار لا تُقاوم"
       />
@@ -28,7 +28,7 @@ export default function Offer() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
-          className=" right-0 hidden lg:absolute left-0   w-full "
+          className=" right-0 hidden lg:block absolute left-0   w-full "
         >
           <Image alt="offerBG " className="w-full" src={offerBG} />
         </motion.div>
@@ -42,13 +42,47 @@ export default function Offer() {
           <Image alt="offerBGR " className="w-full" src={offerBGR} />
         </motion.div>
 
-        <div className=" grid bg-[#FFFFFF] gap-2 lg:gap-6 relative z-20 max-w-[1200px]  mx-auto grid-cols-2">
+        <div className=" grid bg-[#FFFFFF] gap-4 relative z-20 max-w-[1200px]  mx-auto grid-cols-2">
           <motion.div
             ref={ref}
             initial={{ x: "100%", opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 1.5, ease: "easeIn" }}
-            className="lg:col-span-1 order-2 col-span-2 flex flex-col     justify-between "
+            className="lg:col-span-1  lg:order-2 col-span-2  relative       rounded-3xl  gap-3 flex "
+          >
+            <Image
+              src={Subtract}
+              alt="Subtract"
+              className=" -top-1 -right-1 min-w-[351px] lg:-top-2 lg:-right-2 block absolute  lg:-left-1 lg:-bottom-4  lg:min-w-[604px] lg:min-h-[558px]  "
+            />
+            <Image
+              src={offer2}
+              alt="offer2"
+              className="w-full h-full absolute"
+            />
+            <div className="lg:p-12 p-6  overlay relative flex justify-between  flex-col w-full lg:h-full h-[308.7px]">
+              <div className="flex flex-col justify-end h-full items-end  gap-3">
+                <h3 className="lg:text-[40px] text-[23.66px] text-white font-bold">
+                  <span className="number   font-medium">%30</span> خصم
+                </h3>
+                <p className="text-opacity-80 text-[12px] text-right text-white uppercase leading-tight lg:text-[14px]">
+                  استمتع بألذ النكهات الصحية والطبيعية بأسعار لا تُقاوم اطلب
+                  الآن ووفّر في كل وجبة!
+                </p>
+                <div>
+                  <Button className="font-bold rounded-2xl text-[8px] lg:text-[12px] p-4 lg:p-6 button_shadow">
+                    احصل علي العرض
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 1.5, ease: "easeIn" }}
+            className="lg:col-span-1 gap-6 lg:gap-0  col-span-2 flex flex-col     "
           >
             <div className="relative      rounded-3xl  gap-3 flex ">
               <Image
@@ -73,7 +107,7 @@ export default function Offer() {
                 </div>
               </div>
             </div>
-            <div className="  offer_1 lg:pt-0 grid grid-cols-2 lg:gap-6 gap-2  ">
+            <div className="   grid grid-cols-2 lg:gap-3 gap-2  ">
               <div className="  col-span-1  relative   overflow-hidden  rounded-3xl   flex ">
                 <Image
                   src={img1}
@@ -112,41 +146,6 @@ export default function Offer() {
                       </Button>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            ref={ref}
-            initial={{ x: "-100%", opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 1.5, ease: "easeIn" }}
-            className="lg:col-span-1   col-span-2  relative       rounded-3xl  gap-3 flex "
-          >
-            <Image
-              src={Subtract}
-              alt="Subtract"
-              className=" -top-2 -right-2 hidden lg:absolute -left-2 -bottom-4 min-w-[604px] min-h-[583px]  "
-            />
-            <Image
-              src={offer2}
-              alt="offer2"
-              className="w-full h-full absolute"
-            />
-            <div className="lg:p-12 p-6  overlay relative flex justify-between  flex-col w-full lg:h-full h-[308.7px]">
-              <div className="flex flex-col justify-end h-full items-end  gap-3">
-                <h3 className="lg:text-[40px] text-[23.66px] text-white font-bold">
-                  <span className="number   font-medium">%30</span> خصم
-                </h3>
-                <p className="text-opacity-80 text-[12px] text-right text-white uppercase leading-tight lg:text-[14px]">
-                  استمتع بألذ النكهات الصحية والطبيعية بأسعار لا تُقاوم اطلب
-                  الآن ووفّر في كل وجبة!
-                </p>
-                <div>
-                  <Button className="font-bold rounded-2xl text-[8px] lg:text-[12px] p-4 lg:p-6 button_shadow">
-                    احصل علي العرض
-                  </Button>
                 </div>
               </div>
             </div>

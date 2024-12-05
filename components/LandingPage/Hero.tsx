@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import product1 from "../../app/img/products/frame1.png";
 import product2 from "../../app/img/products/frame2.png";
@@ -20,6 +19,7 @@ import img4 from "../../app/img/hero/101.png";
 import bg from "../../app/img/hero/bg.png";
 import arrow from "../../app/img/icons/shape.png";
 import { motion } from "framer-motion";
+import { Button } from "../ui/button";
 export default function Hero() {
   return (
     <div className="    overflow-hidden   relative     flex flex-col gap-10">
@@ -41,7 +41,7 @@ export default function Hero() {
             initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeIn" }}
-            className="absolute   -right-2 lg:-right-24 -translate-y-1/4 w-[24.03px] lg:w-[71.38px] h-[33.66px] lg:h-[100px]"
+            className="absolute   -right-0 lg:-right-24 -translate-y-1/4 w-[24.03px] lg:w-[71.38px] h-[33.66px] lg:h-[100px]"
           >
             <Image alt="img2" src={img2} className="w-full" />
           </motion.div>
@@ -66,9 +66,9 @@ export default function Hero() {
             initial={{ scale: 0.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeIn" }}
-            className="justify-center flex   lg:gap-8 gap-4   items-center flex-col"
+            className="justify-center flex   gap-8   items-center flex-col"
           >
-            <h1 className="font-black text-center relative text-[32px] lg:text-[40px]">
+            <h1 className="font-black text-center relative text-[32px] w-[323px] lg:w-full lg:text-[40px]">
               أفضل المنتجات بأسعار الجملة مباشرة من الموردين
             </h1>
             <p className="text-[16px] opacity-75 max-w-2xl text-center">
@@ -91,7 +91,7 @@ export default function Hero() {
         initial={{ y: 300, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeIn" }}
-        className="grid-cols-5 bg-custom-gradient   relative mx-auto z-10  gap-x-6 hidden lg:grid   "
+        className="grid-cols-5   bg-custom-gradient   relative mx-auto z-10  gap-x-6 hidden lg:grid   "
       >
         <div className="col-span-1 flex flex-col gap-y-6">
           <div className="bg-[#ECECEC]     flex justify-center items-center  rounded-[36px]">

@@ -1,7 +1,4 @@
 "use client";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Image from "next/image";
 import Left_comment from "../../app/img/customers/left_comment.png";
 import Right_comment from "../../app/img/customers/right_comment.png";
@@ -16,7 +13,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/components/ui/test";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { customerData } from "@/app/data/data";
 import { motion, useInView } from "framer-motion";
@@ -33,7 +30,7 @@ export default function Customers() {
         className="w-full h-full absolute left-0 top-0"
       />
       <SpecialTitle
-        rate={"60"}
+        index={4}
         title=" ...تعرف علي آراء العملاء "
         par={`اطلع على تجارب عملائنا واستمع إلى آرائهم حول جودة منتجاتنا وخدماتنا. نلتزم بتقديم تجربة تسوق استثنائية، وهذا ما يعكسه رضا عملائنا.`}
       />
@@ -43,12 +40,12 @@ export default function Customers() {
         initial={{ y: "100%", opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 1.5, ease: "easeIn" }}
-        className="absolute  lg:right-20 right-4 top-44 "
+        className="absolute  lg:right-20 right-4 top-40 "
       >
         <Image
           alt="icon2"
           src={icon2}
-          className="w-2/3 lg:w-[64.68px] lg:h-[56px]"
+          className="w-[32.34px] h-[28px] lg:w-[64.68px] lg:h-[56px]"
         />
       </motion.div>
       <motion.div
@@ -61,19 +58,19 @@ export default function Customers() {
         <Image
           alt="icon1"
           src={icon1}
-          className="w-2/3 lg:w-[64.68px] lg:h-[56px]"
+          className="w-[32.34px] h-[28px] lg:w-[64.68px] lg:h-[56px]"
         />
       </motion.div>
 
       <Image
         alt="Left_comment"
         src={Left_comment}
-        className="lg:absolute hidden -left-16 translate-y-52    bottom-1/2 object-contain   w-[369.2px] h-[250px]"
+        className="absolute lg:block hidden -left-16 translate-y-52    bottom-1/2 object-contain   w-[369.2px] h-[250px]"
       />
       <Image
         alt="Right_comment"
         src={Right_comment}
-        className="lg:absolute hidden  -right-16 bottom-1/2 object-contain translate-y-52 w-[369.2px] h-[250px]"
+        className="absolute lg:block hidden  -right-16 bottom-1/2 object-contain translate-y-52 w-[369.2px] h-[250px]"
       />
       <motion.div
         ref={ref}
@@ -85,7 +82,7 @@ export default function Customers() {
           <CarouselContent>
             {customerData.map((customer, index) => (
               <CarouselItem key={index}>
-                <div className="lg:w-[854px] w-[300px] relative flex flex-col items-end p-3 my-element bg-white border-[#DDDDDD] mx-auto  h-[234.64px] lg:h-[420px] border-4 border-dashed rounded-tl-[50px] rounded-br-[50px]">
+                <div className="lg:w-[854px] w-[343px] relative flex flex-col items-end p-3 my-element bg-white border-[#DDDDDD] mx-auto  h-[234.64px] lg:h-[420px] border-4 border-dashed rounded-tl-[50px] rounded-br-[50px]">
                   <div className="bg-[#F05B10] p-1  lg:p-6 w-[154.63px] h-[141.38px] lg:w-[385px] lg:h-[352px] rounded-tl-3xl rounded-br-3xl">
                     <div className="flex justify-center lg:gap-3 gap-2 items-center">
                       <div className="flex flex-col gap-1 justify-center items-end">
@@ -107,6 +104,7 @@ export default function Customers() {
                   </div>
                   <div className="flex w-full pt-8  lg:px-6 items-center gap-3">
                     <CarouselPrevious />
+
                     <Avatar className="blur-[2px] lg:w-8 lg:h-8 w-6 h-6">
                       <AvatarImage src={customer.img} alt={customer.name} />
                     </Avatar>
@@ -121,7 +119,7 @@ export default function Customers() {
                   </div>
                   <CarouselItem className="absolute box_shadow lg:w-[782px] h-[130px] w-[260px] p-2 lg:p-12 translate-x-1/2 right-1/2 top-1/2 -translate-y-1/2 lg:h-[220px] bg-white rounded-3xl">
                     <div>
-                      <p className="text-[#666666] text-[10px] lg:text-[16px] text-right">
+                      <p className="text-[#666666] text-[14px] lg:text-[16px] text-right">
                         {customer.review}
                       </p>
                     </div>
